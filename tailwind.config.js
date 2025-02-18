@@ -36,6 +36,12 @@ module.exports = {
             h6: {
               color: colors.text,
             },
+            strong: {
+              color: colors.text,
+            },
+            italic: {
+              color: colors.text,
+            },
             a: {
               color: theme("colors.indigo.600"),
               "&:hover": {
