@@ -1,9 +1,12 @@
-<div class="bg-card rounded-xl shadow-md hover:shadow-xl flex flex-col hover:scale-105 transition-transform duration-500">
+<div class="grid-item md:w-1/2 w-full p-4">
+<div class="shadow-md hover:shadow-xl flex flex-col hover:scale-105 transition-transform duration-500 self-start">
   <!-- Image -->
-  <img class="w-full h-48 md:h-64 object-cover transform rounded-xl" src="{{feature_image}}" alt="{{title}}" />
+  {{#if feature_image}}
+    <img class="w-full object-cover rounded-t-xl" src="{{feature_image}}" alt="{{title}}" />
+  {{/if}}
 
   <!-- Content Area -->
-  <div class="p-6 flex flex-col flex-grow">
+  <div class="p-6 flex flex-col flex-grow {{^if feature_image}}rounded-t-xl{{/if}}">
     <!-- Tags -->
     {{#if tags}}
     <div class="flex space-x-2 mb-4">
@@ -26,7 +29,7 @@
     {{#foreach authors limit="1"}}
     <div class="flex items-center">
       {{#if profile_image}}
-        <img class="w-10 h-10 rounded-full mr-4 border border-gray-700" src="{{profile_image}}" alt="{{name}}">
+      <img class="w-10 h-10 rounded-full mr-4 border border-gray-700" src="{{profile_image}}" alt="{{name}}">
       {{/if}}
       <div>
         <p class="text-sm font-medium text-gray-200">{{name}}</p>
@@ -36,4 +39,5 @@
     {{/foreach}}
   </div>
   {{/if}}
+</div>
 </div>
