@@ -1,9 +1,33 @@
-{{!< default}} 
+{{!< default}}
 
+  <div class="max-full mx-auto px-4 sm:px-6 lg:px-8">
 
-<div class="w-[90rem] mx-auto ">
-    {{#foreach posts}}
-            {{> card}}
+    {{#if @custom.display_site_info }}
+      <!-- Site Information Section -->
+      <section class="pt-24 pb-16">
+        <div class="text-center">
+          <h1 class="text-5xl font-extrabold mb-6 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
+            {{@site.title}}
+          </h1>
+          <p class="max-w-2xl mx-auto text-lg text-gray-400">
+            {{@site.description}}
+          </p>
+        </div>
 
-    {{/foreach}}
-</div>
+        <!-- Optional Image -->
+        {{! <div class="mt-12 flex justify-center"> }}
+        {{!   <img class="w-full max-w-md site-image transform hover:scale-105 transition duration-500 ease-in-out" src="path-to-your-image.jpg" alt="Descriptive Alt Text" /> }}
+        {{! </div> }}
+      </section>
+    {{else}}
+      <div class="pt-24"></div>
+    {{/if}}
+
+    <!-- Posts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {{#foreach posts}}
+        {{> card}}
+      {{/foreach}}
+    </div>
+
+  </div>

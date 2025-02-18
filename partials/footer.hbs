@@ -1,3 +1,39 @@
-<div class="bg-slate-700 w-full my-12 py-2">
-    {{navigation type="secondary"}}
-</div>
+<!-- Footer -->
+<footer class="w-full bg-gradient-to-r from-purple-800 via-blue-700 to-purple-800 text-gray-100 pt-14 pb-6 mt-16" style="box-shadow: 0 50px 32px 0 #121212 inset">
+  <!-- Footer content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Footer Content -->
+    <div class="flex flex-col items-center space-y-6">
+      
+      <!-- Navigation -->
+      <nav aria-label="Footer Navigation">
+        <ul class="flex flex-wrap justify-center space-x-4">
+          {{ navigation type="secondary" }}
+        </ul>
+      </nav>
+      
+      <!-- Centered Text with 'Published with Ghost' Link -->
+      <div class="text-center text-sm text-gray-400">
+        &copy; {{@site.title}}
+        <span class="mx-2">|</span>
+        <a href="https://ghost.org" class="text-gray-400 hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">Published with Ghost</a>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="flex space-x-4">
+        {{#if @site.twitter}}
+          <!-- Twitter (X) Icon -->
+          <a href="{{@site.twitter}}" class="text-gray-100 hover:text-blue-400 transition-colors duration-300" aria-label="Twitter">
+            {{> icons/x }}
+          </a>
+        {{/if}}
+        {{#if @site.facebook}}
+          <!-- Facebook Icon -->
+          <a href="{{@site.facebook}}" class="text-gray-100 hover:text-blue-400 transition-colors duration-300" aria-label="Facebook">
+            {{> icons/facebook }}
+          </a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,15 +1,168 @@
-<div class="mx-auto flex flex-col bg-slate-800 ">
-<div class="flex flex-col w-[90rem]  mx-auto">
-    <div class="flex flex-row absolute top-8 right-10">
-
-        <button class="dark mx-2">{{> icons/dark}}</button>
-        <button class="gh-search mx-2" data-ghost-search>{{> icons/search}}</button>
-
+<!-- Header -->
+<div id="header" class="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 py-4 px-4 sm:px-6 lg:px-8 transition-all duration-100 ease-in-out">
+  <div id="capsule" class="flex justify-between items-center bg-gradient-to-r from-indigo-500/50 via-purple-600/50 to-pink-500/50 rounded-full py-4 px-6 shadow-2xl backdrop-blur-md transition-all duration-500">
+    <!-- Site Brand Name -->
+    <div class="flex items-center">
+      <span class="text-2xl font-bold mr-8 text-white">{{ @site.title }}</span>
     </div>
 
-    <div class="mx-auto my-14">
-        {{ navigation}}
+    <!-- Desktop Navigation and Search -->
+    <div class="hidden md:flex items-center space-x-6">
+      <!-- Navigation Menu -->
+      <nav aria-label="site navigation">
+        <ul class="flex space-x-6">
+        {{ navigation }}
+        </ul>
+      </nav>
+
+      <!-- Search Button -->
+      <button class="gh-search color-text" data-ghost-search aria-label="Search">
+        {{> icons/search }}
+      </button>
     </div>
 
+    <!-- Mobile Search and Menu Button -->
+    <div class="flex items-center space-x-4 md:hidden">
+      <!-- Search Button -->
+      <button class="gh-search color-text" data-ghost-search aria-label="Search">
+        {{> icons/search }}
+      </button>
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="focus:outline-none tool-button" aria-label="Toggle navigation">
+        <!-- Hamburger/Cross Icon -->
+        <div class="hamburger">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="max-h-0 overflow-hidden rounded-b-[30px] transition-all duration-500 ease-in-out">
+    <nav aria-label="mobile navigation" class="bg-gradient-to-r from-indigo-500/50 via-purple-600/50 to-pink-500/50 shadow-2xl backdrop-blur-md">
+      <ul class="flex flex-col items-center space-y-4 py-4">
+        {{ navigation }}
+      </ul>
+    </nav>
+  </div>
 </div>
-</div>
+
+<!-- Custom CSS -->
+<style>
+  /* Header initial and scrolled styles */
+  #header {
+    width: 100%;
+    transition: width 0.5s ease-in-out;
+  }
+
+  #header.scrolled {
+    width: 70%; /* Adjust this value as needed */
+  }
+
+  .tool-button {
+    display: inline-flex; justify-content: center; align-items: center; width: 32px; height: 32px; padding: 0; border: 0; color: inherit; background-color: transparent; cursor: pointer; outline: none;
+  }
+
+  /* Hamburger Menu Icon */
+  .hamburger {
+    display: inline-block;
+    cursor: pointer;
+    width: 24px;
+    height: 18px;
+    position: relative;
+  }
+
+  .hamburger-line {
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    border-radius: 1px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger-line:nth-child(1) {
+    top: 0;
+  }
+
+  .hamburger-line:nth-child(2) {
+    top: 8px;
+  }
+
+  .hamburger-line:nth-child(3) {
+    top: 16px;
+  }
+
+  /* Active state */
+  .hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+  }
+
+  .hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 8px;
+  }
+  
+  /* Mobile Menu Animation */
+  #mobile-menu.open {
+    max-height: 500px; /* Adjust based on the content height */
+  }
+</style>
+
+<!-- JavaScript for Menu Toggling and Scrolling Effect -->
+<script>
+  const menuButton = document.getElementById('menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const header = document.getElementById('header');
+  const capsule = document.getElementById('capsule');
+  const hamburger = document.querySelector('.hamburger');
+
+  // Define transition durations (in milliseconds)
+  const capsuleTransitionDuration = 500; // Matches the duration in CSS
+  const mobileMenuTransitionDuration = 500; // Matches the duration in CSS
+
+  // Mobile menu toggle with animation
+  menuButton.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('open');
+
+    if (isOpen) {
+      // Close the mobile menu first
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+
+      // After the mobile menu closes, change capsule corners back
+      setTimeout(() => {
+        capsule.classList.add('rounded-full');
+        capsule.classList.remove('rounded-t-[30px]');
+      }, mobileMenuTransitionDuration);
+    } else {
+      // Change capsule corners first
+      capsule.classList.remove('rounded-full');
+      capsule.classList.add('rounded-t-[30px]');
+
+      // After the capsule corners change, open the mobile menu
+      setTimeout(() => {
+        mobileMenu.classList.add('open');
+        hamburger.classList.add('active');
+      }, capsuleTransitionDuration);
+    }
+  });
+
+  // Header width adjustment on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>

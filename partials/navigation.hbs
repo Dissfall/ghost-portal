@@ -1,13 +1,9 @@
 {{#if isSecondary}}
-    <ul class="flex flex-row  justify-center" >
         {{#foreach navigation}}
-            <li class="block text-center text-[0.70rem] text-white p-2 mx-2 nav-{{slug}}"><a href="{{url}}" >{{slug}}</a></li>
+            <li><a href="{{url}}" class="text-white hover:text-gray-200">{{label}}</a></li>
         {{/foreach}}
-    </ul>
 {{else}}
-        <ul class="flex flex-row justify-center" >
         {{#foreach navigation}}
-            <li class="block text-center text-[0.70rem] text-white p-2 mx-2 nav-{{slug}}"><a href="{{url}}" >{{slug}}</a></li>
+            <li><a href="{{url absolute="true"}}" class="text-white hover:text-gray-200">{{label}}</a></li>
         {{/foreach}}
-    </ul>
 {{/if}}
