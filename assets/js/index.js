@@ -6,7 +6,6 @@ let msnry = new Masonry(elem, {
 });
 
 imagesLoaded(elem, () => {
-  console.log("asdfsd");
   msnry.layout();
 });
 
@@ -101,3 +100,25 @@ function adjustHeaderWidth() {
     header.style.width = "";
   }
 }
+
+// JavaScript to show/hide the Back to Top button and scroll to top
+const backToTopButton = document.getElementById("back-to-top");
+
+// Show or hide the button based on scroll position
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 300) {
+    backToTopButton.classList.add("show");
+    backToTopButton.classList.remove("hide");
+  } else {
+    backToTopButton.classList.add("hide");
+    backToTopButton.classList.remove("show");
+  }
+});
+
+// Scroll smoothly to the top when the button is clicked
+backToTopButton.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

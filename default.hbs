@@ -25,14 +25,21 @@
 
 
 
-    {{{body}}}
+      {{{body}}}
 
 
+    <!-- Back to Top Button -->
+    {{#if @custom.display_jump_to_top_button}}
+      <button id="back-to-top" class="fixed bottom-8 right-8 z-50 p-4 rounded-full shadow-2xl focus:outline-none" aria-label="Back to Top">
+        {{> icons/top}}
+      </button>
+    {{/if}}
 
     {{> footer}}
 
 
     {{ghost_foot}}
+</button>
 </body>
 
 </html>

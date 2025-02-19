@@ -26,6 +26,10 @@
       "display_site_info": {
         "type": "boolean",
         "default": true
+      },
+      "display_jump_to_top_button": {
+        "type": "boolean",
+        "default": true
       }
     }
   },
