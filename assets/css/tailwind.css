@@ -10,6 +10,59 @@
 .kg-width-full {
 }
 
+:root {
+  --ghost-accent-color-hue: 0deg;
+  --ghost-accent-color-saturation: 100%;
+  --ghost-accent-color-lightness: 50%;
+}
+
+.custom-gradient {
+  background: linear-gradient(
+    to right,
+    hsl(
+      calc(var(--ghost-accent-color-hue) - 60deg),
+      var(--ghost-accent-color-saturation),
+      var(--ghost-accent-color-lightness)
+    ),
+    hsl(
+      var(--ghost-accent-color-hue),
+      var(--ghost-accent-color-saturation),
+      var(--ghost-accent-color-lightness)
+    ),
+    hsl(
+      calc(var(--ghost-accent-color-hue) + 60deg),
+      var(--ghost-accent-color-saturation),
+      var(--ghost-accent-color-lightness)
+    )
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.custom-gradient-text {
+  background: linear-gradient(
+    to right,
+    hsl(
+      calc(var(--ghost-accent-color-hue) - 60deg),
+      var(--ghost-accent-color-saturation),
+      var(--ghost-accent-color-lightness)
+    ),
+    hsl(
+      var(--ghost-accent-color-hue),
+      var(--ghost-accent-color-saturation),
+      var(--ghost-accent-color-lightness)
+    ),
+    hsl(
+      calc(var(--ghost-accent-color-hue) + 60deg),
+      var(--ghost-accent-color-saturation),
+      var(--ghost-accent-color-lightness)
+    )
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .card:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
