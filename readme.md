@@ -6,6 +6,7 @@ See a demo at: [portal.prismatica.app](https://portal.prismatica.app/)
 ## Features
 
 - Configurable accent golour gradient
+- Configurable custom fonts
 - "Jump to Top" button
 - Time to Read for articles
 
