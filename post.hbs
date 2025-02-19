@@ -24,6 +24,21 @@
     <!-- Post Title -->
     <h1 class="text-4xl font-bold text-indigo-200 my-6 text-center">{{title}}</h1>
 
+    <!-- Reading Time Indicator -->
+    {{#if @custom.display_time_to_read_for_articles}}
+      <div class="flex items-center justify-center text-gray-300 text-sm mb-6">
+          <!-- Clock Icon -->
+          <svg class="w-4 h-4 mr-1 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="Reading time icon">
+              <!-- Clock face -->
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"></circle>
+              <!-- Clock hands -->
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"></path>
+          </svg>
+          <!-- Reading Time Text -->
+          <span>{{reading_time}}</span>
+      </div>
+    {{/if}}
+
     <!-- Post Content -->
     <div class="post-content prose mx-auto">
         {{content}}

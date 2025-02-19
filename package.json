@@ -30,6 +30,11 @@
       "display_jump_to_top_button": {
         "type": "boolean",
         "default": true
+      },
+      "display_time_to_read_for_articles": {
+        "type": "boolean",
+        "default": true,
+        "group": "post"
       }
     }
   },
