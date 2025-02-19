@@ -122,3 +122,24 @@
   visibility: hidden;
 }
 
+/* Logo Container */
+.logo-container {
+  height: 2rem; /* Equivalent to h-8 in Tailwind CSS */
+  width: 8rem; /* Fixed width to prevent layout shifts */
+  margin-right: 2rem; /* Equivalent to mr-8 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo Image */
+.logo-container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* Site Title Text */
+.logo-container span {
+  display: block;
+  text-align: center;
+}
