@@ -11,6 +11,7 @@ const colors = {
 
 module.exports = {
   content: ["./**/*.hbs", "partials/**/.hbs"],
+  safelist: ["md:w-1/2", "md:w-1/3"],
   theme: {
     extend: {
       colors,
