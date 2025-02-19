@@ -4,8 +4,10 @@ A dark and minimalistic theme for [Ghost](https://github.com/tryghost/ghost/).
 See a demo at: [portal.prismatica.app](https://portal.prismatica.app/)
 
 ## Features
-* "Jump to Top" button
-* Time to Read for articles
+
+- Configurable accent golour gradient
+- "Jump to Top" button
+- Time to Read for articles
 
 ## Screenshot
 
