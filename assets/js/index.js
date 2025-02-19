@@ -1,13 +1,15 @@
 let elem = document.querySelector(".grid");
 
-let msnry = new Masonry(elem, {
-  itemSelector: ".grid-item",
-  percentPosition: true,
-});
+if (elem) {
+  let msnry = new Masonry(elem, {
+    itemSelector: ".grid-item",
+    percentPosition: true,
+  });
 
-imagesLoaded(elem, () => {
-  msnry.layout();
-});
+  imagesLoaded(elem, () => {
+    msnry.layout();
+  });
+}
 
 const menuButton = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
