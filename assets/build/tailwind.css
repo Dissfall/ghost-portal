@@ -945,9 +945,6 @@ video {
 .absolute{
   position: absolute;
 }
-.relative{
-  position: relative;
-}
 .left-1\/2{
   left: 50%;
 }
@@ -1112,10 +1109,6 @@ video {
 .rounded-b-\[30px\]{
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
-}
-.rounded-t-\[30px\]{
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
 }
 .rounded-t-xl{
   border-top-left-radius: 0.75rem;
@@ -1303,9 +1296,6 @@ video {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.outline{
-  outline-style: solid;
-}
 .backdrop-blur-md{
   --tw-backdrop-blur: blur(12px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1361,37 +1351,104 @@ video {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+#header {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+#header.scrolled {
+}
+
+.tool-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger-line {
+  display: block;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  border-radius: 1px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger-line:nth-child(3) {
+  top: 16px;
+}
+
+/* Active state */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu.open {
+  max-height: 500px; /* Adjust based on the content height */
+}
 .hover\:scale-105:hover{
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 .hover\:text-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity, 1));
 }
-
 .hover\:text-gray-200:hover{
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
 }
-
 .hover\:opacity-80:hover{
   opacity: 0.8;
 }
-
 .hover\:shadow-xl:hover{
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
 @media (min-width: 640px){
 
   .sm\:px-6{
@@ -1399,7 +1456,6 @@ video {
     padding-right: 1.5rem;
   }
 }
-
 @media (min-width: 768px){
 
   .md\:flex{
@@ -1414,7 +1470,6 @@ video {
     width: 50%;
   }
 }
-
 @media (min-width: 1024px){
 
   .lg\:px-8{

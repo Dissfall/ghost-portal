@@ -14,3 +14,77 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+#header {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+#header.scrolled {
+}
+
+.tool-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger-line {
+  display: block;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  border-radius: 1px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger-line:nth-child(3) {
+  top: 16px;
+}
+
+/* Active state */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu.open {
+  max-height: 500px; /* Adjust based on the content height */
+}
+
