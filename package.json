@@ -37,7 +37,13 @@
           "2",
           "3"
         ],
-        "default": "2"
+        "default": "2",
+        "group": "homepage"
+      },
+      "display_authors_on_post_cards": {
+        "type": "boolean",
+        "default": true,
+        "group": "homepage"
       },
       "display_time_to_read_for_articles": {
         "type": "boolean",

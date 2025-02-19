@@ -24,6 +24,7 @@
   </div>
 
   <!-- Author Info -->
+  {{#if @custom.display_authors_on_post_cards}}
   {{#if authors}}
   <div class="p-6 border-t border-gray-700">
     {{#foreach authors limit="1"}}
@@ -38,6 +39,7 @@
     </div>
     {{/foreach}}
   </div>
+  {{/if}}
   {{/if}}
 </div>
 </div>
