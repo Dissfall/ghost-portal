@@ -1087,8 +1087,14 @@ video {
 .flex-wrap{
   flex-wrap: wrap;
 }
+.items-start{
+  align-items: flex-start;
+}
 .items-center{
   align-items: center;
+}
+.justify-start{
+  justify-content: flex-start;
 }
 .justify-center{
   justify-content: center;
@@ -1497,8 +1503,6 @@ video {
   width: 8rem; /* Fixed width to prevent layout shifts */
   margin-right: 2rem; /* Equivalent to mr-8 */
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Logo Image */

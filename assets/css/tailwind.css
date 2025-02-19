@@ -128,8 +128,6 @@
   width: 8rem; /* Fixed width to prevent layout shifts */
   margin-right: 2rem; /* Equivalent to mr-8 */
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Logo Image */
