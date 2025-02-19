@@ -1,13 +1,6 @@
-Install the `hello-world` theme in your ghost cms. It is a basis structure for ghost theme.
-![demo](./assets/hello-world-thumb.png)
-You install this theme with npm or yarn command line. it is provide helping to build the ghost theme. 
-[ghosttheme-cli](https://www.npmjs.com/package/ghosttheme-cli)
+# Portal
 
-```
-git clone https://github.com/officialrajdeepsingh/hello-world.git
+A dark and minimalistic theme for [Ghost](https://github.com/tryghost/ghost/).
+See a demo at: [portal.prismatica.app](https://portal.prismatica.app/)
 
-cd hello-world
-
-npm start // sprate server for tailwindcss
-
-```
+![CleanShot 2025-02-19 at 11 57 44@2x](https://github.com/user-attachments/assets/494a631b-10ba-474b-8f5f-64172fddb31e)
