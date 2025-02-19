@@ -143,3 +143,604 @@
   display: block;
   text-align: center;
 }
+
+/* Ensure consistent box-sizing */
+.kg-button-card,
+.kg-button-card * {
+  box-sizing: border-box;
+}
+
+/* Button Card Container */
+.kg-button-card {
+  display: flex;
+  position: static;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Align Left if specified */
+.kg-button-card.kg-align-left {
+  justify-content: flex-start;
+}
+
+/* Button Styling */
+.kg-button-card a.kg-btn {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  padding: 0.75rem 1.5rem; /* Adjusted padding for consistent sizing */
+  height: auto; /* Allow height to adjust based on content */
+  line-height: 1.2;
+  font-family: inherit; /* Inherit font-family from parent */
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(99, 102, 241, 0.5),
+    rgba(139, 92, 246, 0.5),
+    rgba(236, 72, 153, 0.5)
+  ); /* Gradient background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border-radius: 9999px; /* Fully rounded button, similar to 'rounded-full' */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Similar to Tailwind's 'shadow-2xl' */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.kg-button-card a.kg-btn:hover {
+  opacity: 0.85;
+}
+
+/* For Accent Button (if needed) */
+.kg-button-card a.kg-btn-accent {
+  background-color: var(--ghost-accent-color, rgba(99, 102, 241, 0.5));
+  backdrop-filter: blur(10px); /* Ensure blur is applied */
+}
+
+/* Ensure consistent box-sizing */
+.kg-callout-card,
+.kg-callout-card * {
+  box-sizing: border-box;
+}
+
+/* Callout Card Base Styles */
+.kg-callout-card {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem; /* Adjusted padding for better spacing */
+  border-radius: 1rem; /* Rounded corners similar to 'rounded-lg' */
+  background: linear-gradient(
+    to right,
+    rgba(99, 102, 241, 0.5),
+    /* Indigo */ rgba(139, 92, 246, 0.5),
+    /* Purple */ rgba(236, 72, 153, 0.5)
+  ); /* Pink */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Similar to Tailwind's 'shadow-2xl' */
+  color: #fff; /* White text for contrast */
+  margin-bottom: 1.5rem; /* Space between callout cards */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Callout Emoji */
+.kg-callout-card .kg-callout-emoji {
+  margin-right: 1rem;
+  font-size: 2rem; /* Larger emoji size */
+  line-height: 1;
+}
+
+/* Callout Text */
+.kg-callout-card .kg-callout-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: inherit; /* Inherit font-family from parent */
+}
+
+/* Hover Effect */
+.kg-callout-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Accent Callout Card */
+.kg-callout-card.kg-callout-card-accent {
+  background: var(--ghost-accent-color, rgba(99, 102, 241, 0.5));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.kg-callout-card.kg-callout-card-accent a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Margin between multiple callout cards */
+.kg-callout-card + .kg-callout-card {
+  margin-top: 1.5rem;
+}
+
+/* Ensure consistent box-sizing */
+.kg-signup-card,
+.kg-signup-card * {
+  box-sizing: border-box;
+}
+
+/* Base Signup Card Styles */
+.kg-signup-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem; /* Rounded corners */
+  background: linear-gradient(
+    to right,
+    rgba(99, 102, 241, 0.5),
+    /* Indigo */ rgba(139, 92, 246, 0.5),
+    /* Purple */ rgba(236, 72, 153, 0.5)
+  ); /* Pink */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Deep shadow */
+  color: #fff; /* White text */
+  margin-bottom: 1.5rem; /* Space below the card */
+}
+
+/* Signup Card Content */
+.kg-signup-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.kg-signup-card-content h2.kg-signup-card-heading,
+.kg-signup-card-content h3.kg-signup-card-subheading {
+  margin: 0;
+}
+
+.kg-signup-card-content h2.kg-signup-card-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.kg-signup-card-content h3.kg-signup-card-subheading {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Signup Form */
+.kg-signup-card-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.kg-signup-card-fields {
+  display: flex;
+  padding: 0 !important;
+  border: 0 !important;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ) !important; /* Semi-transparent input background */
+  border-radius: 9999px !important; /* Fully rounded fields */
+  overflow: hidden;
+}
+
+.kg-signup-card-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  background: transparent !important;
+}
+
+.kg-signup-card-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.kg-signup-card-input:focus,
+.kg-signup-card-input:focus-visible {
+  outline: none;
+}
+
+.kg-signup-card-button {
+  padding: 0 1.5rem;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent button background */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  height: inherit !important;
+}
+
+.kg-signup-card-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Success and Error Messages */
+.kg-signup-card-success,
+.kg-signup-card-error {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.kg-signup-card-success {
+  color: #22c55e; /* Green for success */
+}
+
+.kg-signup-card-error {
+  color: #ef4444; /* Red for error */
+}
+
+/* Disclaimer */
+.kg-signup-card-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+  .kg-signup-card-content {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .kg-signup-card-text {
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  .kg-signup-card-form {
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+  .kg-signup-card-fields {
+    margin-top: 1rem;
+  }
+}
+
+/* Ensure consistent box-sizing */
+.kg-bookmark-card,
+.kg-bookmark-card * {
+  box-sizing: border-box;
+}
+
+/* Bookmark Card Container */
+.kg-bookmark-card a.kg-bookmark-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+  border-radius: 1rem; /* Rounded corners */
+  border-width: 0;
+  overflow: hidden;
+  color: #fff; /* White text */
+  background: linear-gradient(
+    to right,
+    rgba(99, 102, 241, 0.5),
+    /* Indigo */ rgba(139, 92, 246, 0.5),
+    /* Purple */ rgba(236, 72, 153, 0.5)
+  ); /* Pink */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Deep shadow */
+  border: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Hover Effect */
+.kg-bookmark-card a.kg-bookmark-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+.kg-bookmark-card a.kg-bookmark-container,
+.kg-bookmark-card a.kg-bookmark-container:hover {
+  border-radius: 1rem; /* Rounded corners */
+  border-width: 0;
+}
+
+/* Bookmark Content */
+.kg-bookmark-content {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem !important;
+  position: relative !important;
+  z-index: 1; /* Ensure content is above background */
+}
+
+/* Bookmark Title */
+.kg-bookmark-title {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Bookmark Description */
+.kg-bookmark-description {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bookmark Metadata */
+.kg-bookmark-metadata {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Bookmark Icon */
+.kg-bookmark-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  border-radius: 50%; /* Round icon */
+  object-fit: cover;
+}
+
+/* Bookmark Author and Publisher */
+.kg-bookmark-author,
+.kg-bookmark-publisher {
+  margin-right: 0.5rem;
+}
+
+.kg-bookmark-author::after {
+  content: "•";
+  margin-left: 0.5rem;
+}
+
+/* Bookmark Thumbnail */
+.kg-bookmark-thumbnail {
+  flex: 1 1 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.kg-bookmark-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  margin: 0;
+}
+
+/* Thumbnail Hover Effect */
+.kg-bookmark-card a.kg-bookmark-container:hover .kg-bookmark-thumbnail img {
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Stack content vertically on smaller screens */
+  .kg-bookmark-card a.kg-bookmark-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .kg-bookmark-content,
+  .kg-bookmark-thumbnail {
+    flex: 1 1 100%;
+  }
+
+  .kg-bookmark-thumbnail {
+    height: 200px;
+  }
+}
+
+/* Ensure consistent box-sizing */
+.kg-header-card,
+.kg-header-card * {
+  box-sizing: border-box;
+}
+
+/* Base Header Card Styles */
+.kg-header-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12vmin 4rem;
+  min-height: 60vh;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(99, 102, 241, 0.5),
+    /* Indigo */ rgba(139, 92, 246, 0.5),
+    /* Purple */ rgba(236, 72, 153, 0.5)
+  ); /* Pink */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Deep shadow */
+  color: #fff; /* White text */
+  overflow: hidden;
+}
+
+/* Header Card Sizes */
+.kg-header-card.kg-size-small {
+  padding-top: 14vmin;
+  padding-bottom: 14vmin;
+  min-height: 40vh;
+}
+
+.kg-header-card.kg-size-large {
+  padding-top: 18vmin;
+  padding-bottom: 18vmin;
+  min-height: 80vh;
+}
+
+/* Text Alignment */
+.kg-header-card.kg-align-left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Heading Styles */
+.kg-header-card h2.kg-header-card-header {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.kg-header-card.kg-size-small h2.kg-header-card-header {
+  font-size: 4rem;
+}
+
+.kg-header-card.kg-size-large h2.kg-header-card-header {
+  font-size: 6rem;
+}
+
+/* Subheading Styles */
+.kg-header-card h3.kg-header-card-subheader {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 40rem;
+  opacity: 0.9;
+}
+
+.kg-header-card h2 + h3.kg-header-card-subheader {
+  margin-top: 0.5rem;
+}
+
+.kg-header-card.kg-size-small h3.kg-header-card-subheader {
+  font-size: 1.25rem;
+}
+
+.kg-header-card.kg-size-large h3.kg-header-card-subheader {
+  font-size: 1.75rem;
+}
+
+/* Button Styles */
+.kg-header-card a.kg-header-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.75rem;
+  padding: 0 1.5rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 9999px; /* Fully rounded button */
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.kg-header-card a.kg-header-card-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.kg-header-card.kg-size-small a.kg-header-card-button {
+  margin-top: 1.5rem;
+  height: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.kg-header-card.kg-size-large a.kg-header-card-button {
+  margin-top: 2rem;
+  height: 3.5rem;
+  font-size: 1.1rem;
+}
+
+/* Background Image Style */
+.kg-header-card.kg-style-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.kg-header-card.kg-style-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.kg-header-card.kg-style-image h2.kg-header-card-header,
+.kg-header-card.kg-style-image h3.kg-header-card-subheader,
+.kg-header-card.kg-style-image a.kg-header-card-button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .kg-header-card {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .kg-header-card h2.kg-header-card-header {
+    font-size: 3.5rem;
+  }
+
+  .kg-header-card.kg-size-large h2.kg-header-card-header {
+    font-size: 4rem;
+  }
+
+  .kg-header-card.kg-size-small h2.kg-header-card-header {
+    font-size: 3rem;
+  }
+
+  .kg-header-card h3.kg-header-card-subheader {
+    font-size: 1.25rem;
+  }
+
+  .kg-header-card.kg-size-large h3.kg-header-card-subheader {
+    font-size: 1.5rem;
+  }
+
+  .kg-header-card.kg-size-small h3.kg-header-card-subheader {
+    font-size: 1rem;
+  }
+
+  .kg-header-card a.kg-header-card-button {
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+}
